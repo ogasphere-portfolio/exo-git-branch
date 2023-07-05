@@ -1,0 +1,120 @@
+<h1 id="mise-en-situation">Mise en situation</h1>
+<ul>
+<li><p>Tout d'abord, félicitations, <strong>c'est ton premier jour de travail</strong> dans une agence web 🎉 et si tout se passe bien, ça ne devrait pas être le dernier 💪</p></li>
+<li><p><strong>Ton premier projet</strong> sera d'apporter quelques modifications sur un site web parlant de dév qui s'appelle <em>oDev</em></p></li>
+<li><p>Pour commencer, <strong>prends quelques minutes</strong> et :</p></li>
+<li><p>jette un coup d'oeil au site web concerné</p></li>
+<li><p>prends connaissance du code source</p></li>
+<li><p>⚠️ Suis bien les instructions les unes après les autres</p></li>
+</ul>
+<h2 id="notre-client-voudrait-ajouter-une-nouvelle-feature-star2">Notre client voudrait ajouter une nouvelle feature 🌟</h2>
+<blockquote>
+  <p>Bonjour, je souhaiterais bien avoir des boutons suivant/précédent sur le diaporama des titres d'articles, j'ai vu ça sur l'un de nos concurrents et ça me parait être une fonctionnalité indispensable. Comme d'hab, je compte sur toi pour me faire ça pour hier ! :rage4: Et pour la facture, comme d'hab aussi, je te la règle dans 6 mois. 👌 Cordialement. Bisous, bisous. 💖</p>
+</blockquote>
+<p>Un peu lunatique ce client… 😒</p>
+<h2 id="a-toi-de-jouer-maintenant">A toi de jouer maintenant</h2>
+<ul>
+<li><p>A partir de maintenant, qui dit <strong>nouvelle fonctionnalité</strong>, dit création d'une <strong>nouvelle branche dédiée</strong> ✔️</p></li>
+<li><p><strong>vérifie sur quelle branche tu es</strong> :</p>
+<ul>
+<li><code>git branch</code> affiche la liste des branches et indique la branche courante avec un caractère <code>*</code></li>
+<li>à ce stade, il n'y a qu'<em>une seule branche</em>, la <code>master</code> : cette commande devrait donc afficher <code>* master</code></li></ul></li>
+<li><p><strong>créer la nouvelle branche pour la feature</strong> :</p>
+<ul>
+<li><code>git checkout -b feature-carousel-nav</code></li>
+<li>avec <code>checkout -b</code> on crée la branche et on bascule dessus en 1 seule instruction</li></ul></li>
+<li><p>si tu le souhaites, vérifie à nouveau la liste des branches et la branche courante :</p>
+<ul>
+<li><code>git branch</code></li></ul></li>
+<li><p>Mais avant de commencer à coder, <strong>regarde les exemples de diaporama</strong> dans la <a href="https://getbootstrap.com/docs/4.0/components/carousel/#with-controls">documentation de Bootstrap</a>, tu y trouveras sans doute ton bonheur 🎉</p></li>
+<li><p>⚠️ <strong>Sans tester le résultat</strong> ⚠️ :</p></li>
+<li><p><strong>ajoute le code HTML manquant</strong> pour gérer les boutons suivant/précédent <strong>mais ne teste pas tout de suite et répond d'abord au téléphone</strong>, c'est peut être <em>important</em> !</p></li>
+</ul>
+<h2 id="phone-dring-dring-allô--on-arrête-tout--changement-de-priorité-">☎️ Dring… Dring… Allô ! On arrête tout ! Changement de priorité !</h2>
+<ul>
+<li><strong>Le client vient d'appeler et il est vénère</strong> :rage4:</li>
+<li><strong>Il y a un bug dans le diaporama</strong>, mais c'est pas de ta faute, tu viens d'arriver 😇  </li>
+<li>Le diaporama afficherait toujours les 3 mêmes articles alors qu'il y en a beaucoup plus dans la liste</li>
+<li><strong>Et c'est très urgent, c'est pour avant-hier !</strong> 😬</li>
+<li>Problème, <strong>tu as déjà écrit un peu de code pour la feature</strong> des boutons suivant/précédent :<ul>
+<li>=&gt; malheureusement, ce code n'est ni terminé ni testé 😥</li></ul></li>
+<li>Et <strong>si tu recrées une branche à partir de la branche courante</strong> <code>feature-carousel-nav</code>, alors que tu n'as pas encore commit quoi que ce soit, <strong>ce code non terminé fera partie de la nouvelle branche</strong> 😞</li>
+</ul>
+<h2 id="pas-de-problème-il-ny-a-que-des-solutions">Pas de problème, il n'y a que des solutions</h2>
+<ul>
+<li><p><strong>Pour te sortir de là</strong> :</p></li>
+<li><p>tu peux faire un <strong>commit du code non terminé</strong> sur la branche <code>feature-carousel-nav</code></p>
+<ul>
+<li>vérifie les fichiers à valider : <code>git status</code></li>
+<li>ajoute le fichier <code>index.php</code> : <code>git add index.php</code></li>
+<li>valide le commit : <code>git commit -m "WIP Diaporama boutons suivant/précédent"</code></li>
+<li>par convention, pour préciser que ce commit correspond à un code non finalisé, on commence le message par <strong>WIP</strong> pour <em>Work in progress</em></li></ul></li>
+<li><p><strong>Ton code est à l'abri</strong> 😌</p></li>
+<li><p><strong>Tu peux maintenant créer une branche dédiée pour le correctif, en repartant de la branche <code>master</code></strong></p></li>
+<li><p><strong>Reviens d'abord sur master</strong> :</p>
+<ul>
+<li><code>git checkout master</code></li>
+<li>=&gt; <strong>le code non terminé a disparu</strong> 🎉</li></ul></li>
+<li><p>Vérifie éventuellement la branche actuelle :</p>
+<ul>
+<li><code>git branch</code></li>
+<li>la branche courante est celle marquée d'un <code>*</code> =&gt; <code>* master</code></li></ul></li>
+<li><p><strong>Crée la nouvelle branche</strong> pour coder le correctif :</p>
+<ul>
+<li><code>git checkout -b fix-carousel</code></li></ul></li>
+<li><p>si tu le souhaites, vérifie à nouveau la liste des branches et la branche courante avec <code>git branch</code> :</p>
+<ul>
+<li>à ce stade, tu devrais voir 3 branches : <code>master</code>, <code>feature-carousel-nav</code> et <code>* fix-carousel</code></li>
+<li><code>* fix-carousel</code> étant la branche courante</li></ul></li>
+</ul>
+<h2 id="beetle-correction-du-bug">🐞 Correction du bug</h2>
+<ul>
+<li>On vérifie la présence du bug : le diaporama affiche effectivement toujours les 3 mêmes articles 😅</li>
+<li><strong>Mets un foreach ou change la condition du for</strong>, j'en dis pas plus c'est toi l'expert !</li>
+<li>Teste pour vérifier que c'est réparé et que tu n'as rien cassé d'autre 😛</li>
+<li><strong>Commit</strong> :</li>
+<li>un petit <code>git status</code> pour voir l'état du dépôt</li>
+<li><code>git add index.php</code></li>
+<li><code>git commit -m "Fix diaporama qui affichait seulement les 3 premiers articles"</code></li>
+<li><strong>Envoie tes modifications sur Github (remote)</strong> :</li>
+<li><code>git push</code></li>
+<li>mais cela retourne une erreur ❌</li>
+<li>en effet, <strong>la nouvelle branche n'existe pas encore sur Github</strong></li>
+<li><code>git</code> te fournit la commande pour envoyer la branche locale vers Github 🙏<ul>
+<li><code>git push --set-upstream origin fix-carousel</code></li>
+<li>et si tu veux te la raconter, tu peux utiliser à la place le raccourci suivant : <code>git push -u origin fix-carousel</code></li></ul></li>
+</ul>
+<h2 id="comment-mettre-à-jour-la-production-branche-master-">Comment mettre à jour la production (branche master) ?</h2>
+<p><strong>Comment faire, car la branche <code>fix-carousel</code> est totalement indépendante de <code>master</code></strong> ? 😭</p>
+<ul>
+<li>Heureusement =&gt; <strong>on peut rapatrier les commits</strong> d'une autre branche sur la branche courante 😌</li>
+<li><strong>Place toi sur <code>master</code></strong> :<ul>
+<li><code>git checkout master</code></li></ul></li>
+<li><strong>Fusionne la branche <code>fix-carousel</code></strong> dans la branche <code>master</code> :<ul>
+<li><code>git merge fix-carousel</code></li></ul></li>
+<li><strong>Envoie sur Github</strong> :<ul>
+<li><code>git push</code></li></ul></li>
+<li><strong>La branche <code>master</code> est à jour et prête à être déployée</strong> ! 😎</li>
+</ul>
+<h2 id="terminer-la-feature">Terminer la feature</h2>
+<p><strong>Le coup de stress étant passé</strong> 😌 =&gt; tu peux reprendre ton travail là où tu l'avais laissé 👍</p>
+<ul>
+<li><strong>Repasse sur la branche <code>feature-carousel-nav</code></strong></li>
+<li><code>git checkout feature-carousel-nav</code></li>
+<li><strong>Vérifie le code et teste le</strong></li>
+<li><strong>Ajoute le fichier pour ton commit</strong> : <code>git add index.php</code></li>
+<li><strong>Commit</strong> :</li>
+<li><code>git commit -m "Diaporama : ajout boutons suivant/précédent"</code></li>
+<li>Envoie la branche <code>feature-carousel-nav</code> sur Github (facultatif):</li>
+<li><code>git push</code></li>
+<li><strong>Reviens sur la branche</strong> <code>master</code> :</li>
+<li><code>git checkout master</code></li>
+<li><strong>Fusionne la feature dans</strong> <code>master</code> :</li>
+<li><code>git merge feature-carousel-nav</code></li>
+<li>⚠️ à ce moment-là, si Git ouvre l'éditeur de texte Nano dans le terminal, ce n'est pas pour te demander un rapport circonstancié sur l'origine du bug du diaporama 😱 mais simplement pour te demander de préciser, si tu le souhaites, l'objet de la fusion de la branche <code>feature-carousel-nav</code> dans <code>master</code>. 😌</li>
+<li>pour cela, tu peux ajouter un peu de texte puis utiliser les raccourcis claviers de Nano pour sauvegarder ton message de fusion avec <code>Ctrl+O</code>, valider avec <code>Enter</code>, et enfin quitter avec <code>Ctrl+X</code>.</li>
+<li>la fusion est terminée</li>
+<li><strong>Envoie sur Github</strong> 🎉</li>
+<li><code>git push</code></li>
+</ul>
+<p><strong>Mission accomplie !</strong> 😎</p>

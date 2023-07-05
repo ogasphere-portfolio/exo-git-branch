@@ -1,0 +1,66 @@
+<h1 id="comment-travailler-à-plusieurs-sur-un-même-projet-avec-git-">Comment travailler à plusieurs sur un même projet avec GIT ?</h1>
+<ul>
+<li><strong>Avec les branches évidemment !</strong> 🌿</li>
+<li>Mouais, il a fumé lui 😒</li>
+<li>Attend de voir le concept et on s'en reparle après, ok ? 💪</li>
+</ul>
+<h2 id="principe-des-branches">Principe des branches</h2>
+<ul>
+<li><strong>Pour le moment, tu as toujours travaillé sur la branche <code>master</code></strong></li>
+<li>quoi ? j'étais assis sur une branche et on ne m'a rien dit ! 😱</li>
+<li>Mais du coup, <strong>c'est quoi une branche ?</strong></li>
+<li><strong>une branche est un historique des modifications du code</strong> (= suite de commits)</li>
+<li>chaque branche est <strong>indépendante</strong> et a donc son <strong>propre historique</strong></li>
+<li>on ne peut être que sur <strong>une seule branche à la fois</strong></li>
+<li>ce qui est commité sur une branche <strong>n'est pas répercuté</strong> sur les autres branches</li>
+<li>mais il est possible de <strong>récupérer les commits d'une autre branche</strong> dans la branche courante :<ul>
+<li>on appelle ça <strong>fusionner 2 branches</strong> (<code>merge</code> en anglais)</li></ul></li>
+<li>enfin, <strong>quand on crée une branche</strong>, on ne repart pas de <em>zéro</em>, <strong>on fait une "copie"</strong> de la branche courante</li>
+</ul>
+<p><details><summary>Schéma d'utilisation des branches</summary></p>
+<p><img src="./images/branches-git-1.png" alt="Branches Git" /></p>
+<p><strong>Ce schéma présente un projet ayant comporté jusqu'à 3 branches en parallèles :</strong></p>
+<ul>
+<li>les branches features (jaune et verte) ont bien été créées à partir de <code>master</code></li>
+<li>la branche feature jaune a été fusionnée dans <code>master</code></li>
+<li>la branche feature verte a poursuivi son évolution indépendamment des 2 autres branches</li>
+</ul>
+<p><strong>On remarque également que les branches "feature" jaune et verte partent de la branche master :</strong></p>
+<ul>
+<li>en effet, quand on crée une branche, la bonne pratique est de repartir de la branche <code>master</code></li>
+<li>la branche <code>master</code> est la branche <em>censée</em> être la plus stable puisque c'est généralement celle utilisée pour déployer le code en production</li>
+</ul>
+<p>Lors de la création de la branche à partir de <code>master</code>, c'est comme si on faisait une <em>copie</em> de la branche <code>master</code> :</p>
+<ul>
+<li>on ne part pas de <em>zéro</em></li>
+<li>au contraire, on repart avec <em>tout l'historique des commits</em> de <code>master</code></li>
+<li>une fois créée, la nouvelle branche gère <em>son propre historique</em> et vit sa vie <em>indépendamment</em> de la branche <code>master</code></li>
+</ul>
+<p>Une fois que la branche jaune a terminé sa fonctionnalité, on en fait bénéficier la branche <code>master</code>:</p>
+<ul>
+<li>on <em>fusionne</em> alors la branche jaune dans la branche <code>master</code></li>
+</ul>
+<p></details></p>
+<h2 id="et-concrètement-sinon-">Et concrètement, sinon ?</h2>
+<ul>
+<li><p>Prenons l'exemple d'un <strong>projet avec plusieurs fonctionnalités/correctifs</strong> en cours de développement :</p></li>
+<li><p>une <strong>fonctionnalité</strong> demandant <em>10j de dév</em> =&gt; refonte design page d'accueil</p></li>
+<li><p>une <strong>fonctionnalité</strong> demandant <em>45j de dév</em> =&gt; statistiques des ventes dans le back-office</p></li>
+<li><p>un <strong>correctif</strong> demandant <em>2j de dév</em> =&gt; fix de sécurité login des utilisateurs</p></li>
+<li><p><strong>Ces 3 développements sont indépendants</strong> 👍 mais :</p></li>
+<li><p>ils n'ont pas forcément débuté le même jour 😬</p></li>
+<li><p>ils possèdent des temps de développement différents 😬</p></li>
+<li><p>la date de déploiement de chaque développement sera sans doute différente 😬</p></li>
+<li><p>En effet, on déploiera le correctif de sécurité au plus vite mais comment faire si on a déjà commencé à développer une autre fonctionnalité sur <code>master</code> ? 😰</p></li>
+<li><p>car si l'on veut <strong>déployer notre fix de sécurité</strong>, on sera <strong>obligé d'envoyer le code</strong>, <em>non finalisé</em> et <em>rempli de bugs</em>, des <strong>2 autres fonctionnalités en cours</strong> 💣</p></li>
+<li><p>pas sûr que notre client apprécie de voir son site web exploser en plein vol 💥</p></li>
+<li><p>Par contre, <strong>si on code chaque fonctionnalité/correctif sur sa propre branche</strong> :</p></li>
+<li><p>on travaille sur chaque développement de façon <strong>indépendante</strong></p></li>
+<li><p>on peut donc <strong>déployer chaque développement dès qu'il est prêt</strong> sans tenir compte du code des autres branches</p></li>
+</ul>
+<p><strong>=> Les branches permettent de travailler sur plusieurs fonctionnalités/correctifs en parallèle</strong></p>
+<p><details><summary>Autre schéma d'utilisation des branches</summary></p>
+<p><img src="./images/branches-git-2.png" alt="Branches Git" /><br />
+</details></p>
+<h2 id="prêt-à-pratiquer-">Prêt à pratiquer ?</h2>
+<p><a href="./instructions.md">Voici les instructions</a>.</p>
